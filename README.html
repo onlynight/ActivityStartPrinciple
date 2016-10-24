@@ -1018,14 +1018,14 @@ body .markdown-body
 <h1 id="_1"><a name="user-content-_1" href="#_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>写在前面</h1>
 <p>在看这篇文章之前你需要了解android的IPC通信机制里面的ADIL的原理，还有一些常用的设计模式比如代理模式你也需要有所了解，了解这些会让你更容易理解android源码。阅读本文的读者我都默认你是了解这些东西的，如果你正好还没没有看过这些东西，那么我想你推荐我的另外几篇文章，希望能让你快速了解android的IPC的AIDL的设计原理：</p>
 <ul>
-<li><a href="http://blog.csdn.net/tgbus18990140382/article/details/52799899">AIDL使用及原理分析CSDN</a></li>
-<li><a href="https://github.com/onlynight/AIDL_demo">AIDL使用及原理分析Github</a></li>
-<li><a href="http://blog.csdn.net/tgbus18990140382/article/details/52817322">代理模式初探CSDN</a></li>
-<li><a href="https://github.com/onlynight/Proxy">Proxy_Github</a></li>
+<li><a href="http://blog.csdn.net/tgbus18990140382/article/details/52799899&lt;br">AIDL使用及原理分析CSDN</a></li>
+<li><a href="https://github.com/onlynight/AIDL_demo&lt;br">AIDL使用及原理分析Github</a></li>
+<li><a href="http://blog.csdn.net/tgbus18990140382/article/details/52817322&lt;br">代理模式初探CSDN</a></li>
+<li><a href="https://github.com/onlynight/Proxy&lt;br">Proxy_Github</a></li>
 </ul>
 <p>下面我们开始正片。</p>
 <h1 id="_2"><a name="user-content-_2" href="#_2" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>阅读源码的方法</h1>
-<p>Android源码数量相当多我们不能从头逐一查看所有文件中的源码，你需要理出一条线索来，你感兴趣的线索比如本文讲的Activity的启动过程分析就是从<code>startActivity</code>函数开始然后逐步深入去查看其中的奥妙。还有一点需要说的是看源码的时候不要太深入细节，我们想了解的代码的逻辑而不是其中如何实现的（当然这个是我看源码的主要目的，如果你的出发点是如何实现的那我们关注的重点就不一样了），梳理代码逻辑让我们能更好的了解android的工作原理，从而在遇到问题的时候不再抓虾而能精准的定位到问题的所在，希望这篇文章能够帮到你。这里同样有一篇文章推荐给你：<a href="http://blog.csdn.net/tgbus18990140382/article/details/52704433">Android源码阅读配置</a></p>
+<p>Android源码数量相当多我们不能从头逐一查看所有文件中的源码，你需要理出一条线索来，你感兴趣的线索比如本文讲的Activity的启动过程分析就是从<code>startActivity</code>函数开始然后逐步深入去查看其中的奥妙。还有一点需要说的是看源码的时候不要太深入细节，我们想了解的代码的逻辑而不是其中如何实现的（当然这个是我看源码的主要目的，如果你的出发点是如何实现的那我们关注的重点就不一样了），梳理代码逻辑让我们能更好的了解android的工作原理，从而在遇到问题的时候不再抓虾而能精准的定位到问题的所在，希望这篇文章能够帮到你。这里同样有一篇文章推荐给你：<a href="http://blog.csdn.net/tgbus18990140382/article/details/52704433&lt;br">Android源码阅读配置</a></p>
 <h1 id="_3"><a name="user-content-_3" href="#_3" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>需要了解的几个类</h1>
 <p>开始之前你需要对几个类有所了解知道他们的职责这样有助于理解源码：</p>
 <h3 id="1activity"><a name="user-content-1activity" href="#1activity" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.Activity</h3>
@@ -1055,7 +1055,7 @@ instrumentation tag.</p>
 <li><code>ActivityManagerService</code>继承了<code>ActivityManagerNative</code>并且实现了它的所有抽象方法。</li>
 </ol>
 <p>类结构图如下：</p>
-<p><img alt="类关系图" src="///E://Code/Github/Readme/ReadmeDemo/Readmes/ActivityPrinciple/images/class_graph.png" /></p>
+<p><img alt="类关系图" src="///C://Users/lion/Desktop/ActivityStartPrinciple/images/class_graph.png" /></p>
 <h1 id="_4"><a name="user-content-_4" href="#_4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>源码逻辑梳理</h1>
 <p>首先我们来看<code>startActivity</code>这个函数：</p>
 <pre><code class="java">// Activity.java

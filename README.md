@@ -614,8 +614,8 @@ class ActivityStarter {
 本文实际上就是详细讲了```ActivityManagerService```是如何与前端链接上的，Android中许多其他的服务例如```MediaCenter```等都是IPC的实现，可以根据本文的的线索和思路查看相应的源码。在梳理完相应的代码逻辑以后就可以关注内部的代码实现了，最后希望本文能够真正帮到你理解Activity的启动过程。
 
 
-[AIDL使用及原理分析CSDN]: http://blog.csdn.net/tgbus18990140382/article/details/52799899
-[AIDL使用及原理分析Github]: https://github.com/onlynight/AIDL_demo
-[代理模式初探CSDN]: http://blog.csdn.net/tgbus18990140382/article/details/52817322
-[Proxy_Github]: https://github.com/onlynight/Proxy
-[Android源码阅读配置]: http://blog.csdn.net/tgbus18990140382/article/details/52704433
+[AIDL使用及原理分析CSDN]: http://blog.csdn.net/tgbus18990140382/article/details/52799899<br>
+[AIDL使用及原理分析Github]: https://github.com/onlynight/AIDL_demo<br>
+[代理模式初探CSDN]: http://blog.csdn.net/tgbus18990140382/article/details/52817322<br>
+[Proxy_Github]: https://github.com/onlynight/Proxy<br>
+[Android源码阅读配置]: http://blog.csdn.net/tgbus18990140382/article/details/52704433<br>
